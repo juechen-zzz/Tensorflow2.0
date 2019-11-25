@@ -7,6 +7,9 @@
 import tensorflow as tf
 
 #############################################################################
+
+# 1.0版本
+
 # a = tf.compat.v1.placeholder(tf.float32, name='variable_a')
 # b = tf.compat.v1.placeholder(tf.float32, name='variable_b')
 #
@@ -20,6 +23,20 @@ import tensorflow as tf
 # print(c_numpy)
 #############################################################################
 
-a = tf.constant(2.)
-b = tf.constant(4.)
-print(a+b)
+# 2.0版本
+from numpy import float32
+
+a = tf.constant(1.)
+b = tf.constant(2.)
+print('a+b:', a+b)
+
+c = tf.constant(3.)
+w = tf.constant(4.)
+
+with tf.GradientTape() as tape:     # 构建梯度环境
+    tape.watch([w])                 # 将w加入梯度跟踪列表
+    y = a * w ** 2 + b * w + c
+
+# 求导
+[dy_dw] = tape.gradient(y, [w])
+print(dy_dw)
