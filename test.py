@@ -5,6 +5,7 @@
 """
 
 import tensorflow as tf
+import numpy as np
 
 #############################################################################
 
@@ -40,3 +41,5 @@ with tf.GradientTape() as tape:     # 构建梯度环境
 # 求导
 [dy_dw] = tape.gradient(y, [w])
 print(dy_dw)
+
+
