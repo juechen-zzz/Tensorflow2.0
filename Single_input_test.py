@@ -48,7 +48,7 @@ def gradient_descent(points, starting_b, starting_w, lr, num_iterations):
     for step in range(num_iterations):
         b, w = step_gradient(b, w, np.array(points), lr)
         loss = mse(b, w, points)
-        if step % 50 == 0:
+        if step % 20 == 0:
             print(f"iteration:{step}, loss:{loss}, w:{w}, b:{b}")
     return [b, w]
 
@@ -58,6 +58,6 @@ if __name__ == '__main__':
     initial_w = 0
     num_iterations = 100
 
-    [b, w]= gradient_descent(data, initial_b, initial_w, lr, num_iterations)
+    [b, w] = gradient_descent(data, initial_b, initial_w, lr, num_iterations)
     loss = mse(b, w, data)
     print(f'Final loss:{loss}, w:{w}, b:{b}')
