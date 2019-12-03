@@ -5,7 +5,7 @@
 import os
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.keras import layers, optimizers, datasets
+# from tensorflow.keras import layers, optimizers, datasets
 
 # load_data返回两个元组，第一个是训练集，第二个是测试集
 # 训练集大小为（60000，28，28）(60000,10)
