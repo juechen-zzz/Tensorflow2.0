@@ -46,7 +46,7 @@ z = tf.constant(np.pi, dtype=tf.float16)
 zz = tf.cast(z, tf.double)
 print(zz)
 
-# 创建全0或者全1张量,  tf.ones()  tf.zeros
+# 创建全0或者全1张量,  tf.ones()  tf.zeros()
 q = tf.ones([3, 2])
 qq = tf.ones_like(q)
 
