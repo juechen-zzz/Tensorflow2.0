@@ -7,6 +7,8 @@
           <option value="tensorflow.constant" />
           <option value="tensorflow_core._api.v2.random.*" />
           <option value="tensorflow.GradientTape" />
+          <option value="tensorflow.cast" />
+          <option value="tensorflow.float32" />
         </list>
       </option>
     </inspection_tool>

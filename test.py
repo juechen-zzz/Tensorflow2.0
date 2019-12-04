@@ -25,9 +25,8 @@ import numpy as np
 #############################################################################
 
 # 2.0版本
-from numpy import float32
 
-a = tf.constant(1.)
+a = tf.constant(1.)                 # 创建标量
 b = tf.constant(2.)
 print('a+b:', a+b)
 
@@ -41,5 +40,18 @@ with tf.GradientTape() as tape:     # 构建梯度环境
 # 求导
 [dy_dw] = tape.gradient(y, [w])
 print(dy_dw)
+
+# 精度转换
+z = tf.constant(np.pi, dtype=tf.float16)
+zz = tf.cast(z, tf.double)
+print(zz)
+
+# 创建全0或者全1张量,  tf.ones()  tf.zeros
+q = tf.ones([3, 2])
+qq = tf.ones_like(q)
+
+# 创建指定元素值的张量 tf.fill()
+w = tf.fill([2, 2], 99)
+
 
 
